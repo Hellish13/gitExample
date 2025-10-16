@@ -6,25 +6,31 @@ actor "Пользователь" as User
 actor "Администратор" as Admin
 actor "Менеджер" as Manager
 
-package "Одобрение новых категорий" {
-  usecase "Одобрение новых категорий" as UC1
+package "Возможности" {
+  usecase "Добавление новых категорий инвентаря" as UC1
   usecase "Управление пользователями" as UC2
   usecase "Запрос инвентаря" as UC3
   usecase "Настройка параметров системы" as UC4
   usecase "Просмотр аналитики и отчетов" as UC5
-  usecase "Просмотр возврата" as UC6
+  usecase "Просмотр сроков возврата" as UC6
   usecase "Возврат инвентаря" as UC7
   usecase "Регистрация" as UC8
+  usecase "Одобрение закупки или списания инвентаря" as UC9
 }
 
-UC1 --> User
-UC2 --> Admin
-UC3 --> User
-UC4 --> Admin
-UC5 --> Manager
-UC6 --> Manager
-UC7 --> User
-UC8 --> User
+UC1 <-- Admin
+UC2 <-- Admin
+UC3 <-- User
+UC4 <-- Admin
+UC5 <-- Manager
+UC5 <-- Admin
+UC6 <-- Manager
+UC6 <-- User
+UC6 <-- Admin
+UC7 <-- User
+UC8 <-- User
+UC9 <-- Admin
+UC9 <-- Manager
 
 @enduml
 ```
