@@ -1,0 +1,30 @@
+```plantuml
+@startuml
+skinparam monochrome true
+
+actor "Пользователь" as User
+actor "Администратор" as Admin
+actor "Менеджер" as Manager
+
+package "Одобрение новых категорий" {
+  usecase "Одобрение новых категорий" as UC1
+  usecase "Управление пользователями" as UC2
+  usecase "Запрос инвентаря" as UC3
+  usecase "Настройка параметров системы" as UC4
+  usecase "Просмотр аналитики и отчетов" as UC5
+  usecase "Просмотр возврата" as UC6
+  usecase "Возврат инвентаря" as UC7
+  usecase "Регистрация" as UC8
+}
+
+UC1 --> User
+UC2 --> Admin
+UC3 --> User
+UC4 --> Admin
+UC5 --> Manager
+UC6 --> Manager
+UC7 --> User
+UC8 --> User
+
+@enduml
+```
